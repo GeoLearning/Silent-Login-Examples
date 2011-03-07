@@ -1,14 +1,7 @@
 ##########################################################
-## GeoNext Project 
-##
-## CONFIDENTIAL & PROPRIETARY
-##
-## Copyright (C) 2004 - 2007 by Geolearning, Inc.
+##  CONFIDENTIAL & PROPRIETARY
+## Copyright (C) 2011 SumTotal Systems, Inc.
 ## All Rights Reserved.
-##
-## Written by Utpal Patel, Ryan Bergman
-##
-## $Header: /GeoNext/GeoNext/Public/Geolearning/Security/Authen/Examples/HMAC-SHA1_Perl.pl ,v 5.10.0 2008/04/29 18:47:49Z upatel Exp $
 ##########################################################
 
 #!/usr/bin/perl 

@@ -1,15 +1,9 @@
 /*
 ##########################################################
-## GeoNext Project
-##
 ## CONFIDENTIAL & PROPRIETARY
 ##
-## Copyright (C) 2004 - 2007 by Geolearning, Inc.
+## Copyright (C) 2011 SumTotal Systems, Inc.
 ## All Rights Reserved.
-##
-## Written by Ryan Bergman
-##
-## $Header: /GeoNext/GeoNext/Public/Geolearning/Security/Authen/Examples/HMAC_SHA1_Java.java,v 1.2 2008/01/30 16:43:45 rbergman Exp $
 ##########################################################
 */
 

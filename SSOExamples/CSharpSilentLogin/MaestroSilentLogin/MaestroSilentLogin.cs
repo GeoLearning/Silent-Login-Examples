@@ -1,3 +1,11 @@
+/*
+##########################################################
+##  CONFIDENTIAL & PROPRIETARY
+## Copyright (C) 2011 SumTotal Systems, Inc.
+## All Rights Reserved.
+##########################################################
+*/
+
 using System;
 using System.Security.Cryptography;
 using System.Text;

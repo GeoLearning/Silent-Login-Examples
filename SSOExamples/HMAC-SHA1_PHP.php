@@ -2,16 +2,9 @@
 
 /*
 ##########################################################
-## GeoNext Project
-##
-## CONFIDENTIAL & PROPRIETARY
-##
-## Copyright (C) 2004 - 2007 by Geolearning, Inc.
+##  CONFIDENTIAL & PROPRIETARY
+## Copyright (C) 2011 SumTotal Systems, Inc.
 ## All Rights Reserved.
-##
-## Written by Ryan Bergman
-##
-## $Header: /GeoNext/GeoNext/Public/Geolearning/Security/Authen/Examples/HMAC-SHA1_PHP.php,v 1.2 2008/01/30 16:43:45 rbergman Exp $
 ##########################################################
 */
 
