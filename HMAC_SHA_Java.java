@@ -13,7 +13,7 @@ import java.util.*;
 import java.text.*;
 import java.net.URLEncoder;
 
-public class HMAC_SHA1_Java
+public class HMAC_SHA_Java
 {
         public static void main(String args[])
         {
@@ -25,13 +25,13 @@ public class HMAC_SHA1_Java
         	String id = "1000";
 
         	/*
-        	   The Secret Key
-        	   Keys should never be written into code like this. Always practice security and good key managemnt.
-        	   see the NIST recomendations:
-			   http://csrc.nist.gov/publications/nistpubs/800-57/SP800-57-Part1.pdf
+		   The Secret Key
+		   Keys should never be written into code like this. Always practice security and good key managemnt.
+		   see the NIST recomendations:
+		   http://csrc.nist.gov/publications/nistpubs/800-57/SP800-57-Part1.pdf
 
-			   note that this is not a real key you should get your key from Geolearning.
-        	*/
+		   note that this is not a real key you should get your key from Geolearning.
+		*/
         	String key = "ijZeXCslP1Ou2s8T6bR3sa3Dk3KKtTDvKKEz0UT0x2K0P6qoWlmApK7EgzIe1us";
 
         	// The domain Folder
@@ -57,11 +57,12 @@ public class HMAC_SHA1_Java
 
         	String hmac = "";
 
-        	//hash it with sha1. for some reason sun never thought you would need a hash in hex??!
+        	//hash it with sha256. for some reason sun never thought you would need a hash in hex??!
         	// you would probably want to wrap this into some kind of utility class for re-use. Its very handy.
+		// to use SHA-1 use the "SHA-1" constant in MessageDigest.getInstance
         	 byte[] defaultBytes = hmacstring.getBytes();
         	 try{
-				 MessageDigest algorithm = MessageDigest.getInstance("SHA-1");
+				 MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
 				 algorithm.reset();
 				 algorithm.update(defaultBytes);
 				 byte messageDigest[] = algorithm.digest();
@@ -80,7 +81,8 @@ public class HMAC_SHA1_Java
  			 }
 
 			 // now append everything into a URL, making sure to urlencode the values
-			 String launchlink = "http://localhost/" + domainPath + "/sha1login.geo?";
+			 // if using sha-1 change the endpoint to "sha1login.geo"
+			 String launchlink = "http://gm1.geolearning.com/geonext/myCompany/sha256login.geo?";
 			 try{
 				 launchlink = launchlink + "username=" + URLEncoder.encode(username, "UTF-8");
 				 launchlink = launchlink + "&timestamp=" + URLEncoder.encode(timestamp, "UTF-8");
