@@ -46,6 +46,7 @@ hmacstring = "%s%s%s" % [username,TimeStamp,key]
 
 # hash it with sha256
 # Maestro offers 2 options: SHA256 and SHA1. Sha256 will be available March 25th 2011
+# hmac = Digest::SHA1.hexdigest(hmacstring)
 hmac = Digest::SHA256.hexdigest(hmacstring)
 
 #Format the link

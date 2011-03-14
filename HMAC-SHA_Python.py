@@ -39,7 +39,7 @@ class HMACLogin(object):
         return "%s%s%s" % (username, self._get_utc_timestamp(), self.key_value)
         
     def _get_hmac_string_hash(self, username):
-        # Two options,: SHA1 and SHA256 (available 3/25/2011
+        # Two options,: SHA1 and SHA256 (available 3/25/2011)
         #  hashed_string = hashlib.sha256()
         hashed_string = hashlib.sha1() #: Create hash instance
         hashed_string.update( self._get_hmac_string(username) ) #: Add text
