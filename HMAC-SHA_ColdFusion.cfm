@@ -9,10 +9,10 @@
 
 <!--- set the variables that make up our SSO --->
 <!--- The users username --->
-<cfset variables.username = 'MyUser@geolearning.com' />
+<cfset variables.username = 'admin' />
 
 <!--- he ID of the secret key in the GeoLearning LMS.--->
-<cfset variables.id = '1000' />
+<cfset variables.id = '57428' />
 
 <!--- The secret Key --->
 <!---
@@ -21,16 +21,13 @@
    see the NIST recomendations:
    http://csrc.nist.gov/publications/nistpubs/800-57/SP800-57-Part1.pdf
 
-   note that this is not a real key you should get your key from Geolearning.
-   note also that CF uses pounds to signify output. So we need two punds here to escape the pound and produce only one.
+   note that this is not a real key you should get your key from you're SumTotal representitive
 --->
-<cfset variables.key = 'ijZeXCslP1Ou2s8T6bR3sa3Dk3KKtTDvKKEz0UT0x2K0P6qoWlmApK7EgzIe1us' />
+<cfset variables.key = '4BDA179E-0BA6-9592-BB07B2CE6688AE3B' />
 
-<!--- The domain Folder --->
-<cfset variables.DomainPath = 'geonext' />
 
 <!--- Optional: the path to forward too after authenticating --->
-<cfset variables.OriginalURL = '/geonext/mysettingshome.geo?nav=SettingsandPrefsHome' />
+<cfset variables.OriginalURL = '/geonext/myCompany/dynamichome.geo?mockupid=SettingsandPrefsHome&nav=SettingsandPrefs' />
 
 <!--- the time needs to be in UTC. grab the UTC time off the server and then format --->
 <cfset variables.utc = DateConvert("local2Utc", now()) />
@@ -39,11 +36,12 @@
 <!--- append everything together into the HMAC string --->
 <cfset variables.hmacstring = variables.username & variables.timestamp & variables.key />
 
-<!--- hash it with MD5 --->
-<cfset variables.hmac = lcase(hash(variables.hmacstring,'SHA1')) />
+<!--- Two versions of sha are avaulable: SHA-1 and SHA-256. for SHA-1 use the 'SHA1' param value for the hash() method --->
+<cfset variables.hmac = lcase(hash(variables.hmacstring,'SHA256')) />
 
-<!--- format the link --->
-<cfset variables.launchlink = "http://localhost/" & variables.DomainPath & "/sha1login.geo?"
+
+<!--- format the link . If using SHA1 change the link to sha1login.geo --->
+<cfset variables.launchlink = "https://localhost/geonext/myCompany/sha256login.geo?"
 							   & "username=" & urlencodedformat(variables.username)
 							   & "&timestamp=" & urlencodedformat(variables.timestamp)
 							   & "&id=" & variables.id
@@ -63,7 +61,6 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<title>My ColdFusion SSO</title>
-	<meta name="generator" content="BBEdit 7.0" />
 </head>
 <body>
 
