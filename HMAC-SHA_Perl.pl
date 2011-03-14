@@ -47,14 +47,15 @@ $timeStamp = $date."T".$time;
 # first appent all required variables i.e username+timestamp+key
 $hmacString = $username.$timeStamp.$key;
 
-# now hash it
+# can be sha-1 or sha-256. Note that when doing sha-256 you must use a different endpoint from the default in this example
+# $hmac = sha256_hex($hmacString);
 $hmac = sha1_hex($hmacString);
 
 #print "<br>";
 #print $hmac;
 #print "<br>";
 
-#Format the link
+#Format the link, when useing SHA-256 change the file endpoint to 'sha256login.geo'
 $launchLink = "http://localhost/".$domainPath."/sha1login.geo?username=".$username."&timestamp=".$timeStamp."&id=".$id."&hmac=".$hmac."&originalURL=".$originalURL;
 
 
