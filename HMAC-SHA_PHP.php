@@ -26,8 +26,6 @@
 	*/
 	$key = 'ijZeXCslP1Ou2s8T6bR3sa3Dk3KKtTDvKKEz0UT0x2K0P6qoWlmApK7EgzIe1us';
 
-	//The domain Folder
-	$DomainPath = 'geonext';
 
 	//Optional: the path to forward too after authenticating
 	$OriginalURL = '/geonext/mysettingshome.geo?nav=SettingsandPrefsHome';
@@ -42,6 +40,7 @@
 	$hmacstring = $username . $timestamp . $key;
 
 	//hash it with Sha-1
+	// if you are using sha-256 you will need to make sure the Cryptography Extensions are installed / enabled and use hash('sha256',$hmacstring)
 	$hmac = sha1($hmacstring);
 
 	//build the query string
@@ -54,8 +53,8 @@
 	// URL encode all of the parms
     $QueryStringEncoded = http_build_query($QueryString);
 
-	// Format the link
-	$launchlink = 'http://localhost/' . $DomainPath . '/sha1login.geo?' . $QueryStringEncoded;
+	// Format the link. If using SHA1-256change the link to sha1256ogin.geo
+	$launchlink = 'http://gm1.geolearning.com/geonext/mycompany/sha1login.geo?' . $QueryStringEncoded;
 
 	//use this if you want auto format
 	//header("location:$launchlink");
